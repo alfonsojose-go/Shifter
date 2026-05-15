@@ -1,0 +1,111 @@
+{
+  "success": true,
+  "message": "Availabilities retrieved successfully",
+  "data": [
+    {
+      "id": 1,
+      "employeeId": 1,
+      "dayOfWeek": "MONDAY",
+      "startTime": "09:00",
+      "endTime": "17:00"
+    },
+    {
+      "id": 2,
+      "employeeId": 1,
+      "dayOfWeek": "TUESDAY",
+      "startTime": "09:00",
+      "endTime": "17:00"
+    },
+    {
+      "id": 3,
+      "employeeId": 1,
+      "dayOfWeek": "THURSDAY",
+      "startTime": "08:00",
+      "endTime": "16:00"
+    },
+    {
+      "id": 4,
+      "employeeId": 1,
+      "dayOfWeek": "FRIDAY",
+      "startTime": "10:00",
+      "endTime": "18:00"
+    },
+    {
+      "id": 5,
+      "employeeId": 1,
+      "dayOfWeek": "SATURDAY",
+      "startTime": "09:00",
+      "endTime": "15:00"
+    },
+    {
+      "id": 6,
+      "employeeId": 2,
+      "dayOfWeek": "MONDAY",
+      "startTime": "08:30",
+      "endTime": "16:30"
+    },
+    {
+      "id": 7,
+      "employeeId": 2,
+      "dayOfWeek": "WEDNESDAY",
+      "startTime": "10:00",
+      "endTime": "18:00"
+    },
+    {
+      "id": 8,
+      "employeeId": 2,
+      "dayOfWeek": "THURSDAY",
+      "startTime": "09:00",
+      "endTime": "17:00"
+    },
+    {
+      "id": 9,
+      "employeeId": 2,
+      "dayOfWeek": "FRIDAY",
+      "startTime": "11:00",
+      "endTime": "19:00"
+    },
+    {
+      "id": 10,
+      "employeeId": 2,
+      "dayOfWeek": "SUNDAY",
+      "startTime": "12:00",
+      "endTime": "20:00"
+    },
+    {
+      "id": 11,
+      "employeeId": 3,
+      "dayOfWeek": "MONDAY",
+      "startTime": "07:00",
+      "endTime": "15:00"
+    },
+    {
+      "id": 12,
+      "employeeId": 3,
+      "dayOfWeek": "TUESDAY",
+      "startTime": "08:00",
+      "endTime": "16:00"
+    },
+    {
+      "id": 13,
+      "employeeId": 3,
+      "dayOfWeek": "WEDNESDAY",
+      "startTime": "09:00",
+      "endTime": "17:00"
+    },
+    {
+      "id": 14,
+      "employeeId": 3,
+      "dayOfWeek": "FRIDAY",
+      "startTime": "10:00",
+      "endTime": "18:00"
+    },
+    {
+      "id": 15,
+      "employeeId": 3,
+      "dayOfWeek": "SATURDAY",
+      "startTime": "08:00",
+      "endTime": "14:00"
+    }
+  ]
+}
