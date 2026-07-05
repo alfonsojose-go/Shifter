@@ -1,8 +1,22 @@
-**Shifter**
+# **Shifter**
 
 A full-stack employee scheduling system powered by a custom scheduling engine, REST APIs, and a modern React dashboard.
+
+<p>
+  <img src="https://img.shields.io/badge/React-18-blue?style=flat-square" alt="React 18" />
+ <p>
+  <p>
+  <img src="https://img.shields.io/badge/Spring%20Boot-3-brightgreen?style=flat-square" alt="Spring Boot 3" />
+  </p>
+  <p>
+  <img src="https://img.shields.io/badge/Node.js-18-green?style=flat-square" alt="Node.js 18" />
+  </p>
+  <p>
+  <img src="https://img.shields.io/badge/License-MIT-yellow?style=flat-square" alt="MIT License" />
+</p>
+
  
-**Problem Statement**
+## **Problem Statement**
 
 Small-to-medium businesses in the food service and retail sectors lose thousands of dollars annually to:
 - Overstaffing during slow periods
@@ -12,7 +26,7 @@ Small-to-medium businesses in the food service and retail sectors lose thousands
 
 Existing solutions (When I Work, 7shifts) charge $2-4 per employee per month. For a 30-person team, that's $720-$1,440/year. Shifter provides **a self-hosted, zero-subscription alternative with constraint-based intelligent scheduling.**
 
-**Tech Stack**
+## **Tech Stack**
 
 
 
@@ -28,22 +42,22 @@ Existing solutions (When I Work, 7shifts) charge $2-4 per employee per month. Fo
 | Build Tool        | Vite                                                                      | Fast development and optimized production builds |
 
 
-**Key Features**
+## **Key Features**
 
-**- One-click schedule generation** — Automatically resolves shift conflicts, availability gaps, and labor law constraints
+- **One-click schedule generation** — Automatically resolves shift conflicts, availability gaps, and labor law constraints
 
-**- Priority-based shift assignment** — Seniority, skill requirements, and employee preferences weighted algorithmically
+- **Priority-based shift assignment** — Seniority, skill requirements, and employee preferences weighted algorithmically
 
-**- Real-time conflict detection** — Visual alerts when a generated schedule violates hard constraints (e.g., overtime limits)
+- **Real-time conflict detection** — Visual alerts when a generated schedule violates hard constraints (e.g., overtime limits)
 
-**- Employee self-service portal** — Staff can submit availability, request swaps, and view schedules
+- **Employee self-service portal** — Staff can submit availability, request swaps, and view schedules
 
-**- Labor cost analytics** — Projected payroll costs based on scheduled hours and wage rates
+- **Labor cost analytics** — Projected payroll costs based on scheduled hours and wage rates
 
-**- Export to PDF/CSV** — Shareable schedules for posting or payroll integration
+- **Export to PDF/CSV** — Shareable schedules for posting or payroll integration
 
 
-**Architecture Decisions**
+## **Architecture Decisions**
 
 **Why split the backend between Node.js and Spring Boot?**
 
@@ -61,7 +75,7 @@ The Node.js layer handles HTTP concerns and data persistence. When a schedule ne
 
 Schedule constraints vary wildly between businesses—some need union rules, others need skill matrices, others need labor law compliance. A rigid SQL schema would require constant migrations. MongoDB's document model lets each business define its own constraint schema without database changes.
 
-**Challenges & Solutions**
+## **Challenges & Solutions**
 
 **Challenge: Race conditions in concurrent schedule edits**
 
@@ -78,44 +92,49 @@ Solution: Moved schedule generation to an asynchronous job queue. The frontend p
 Early versions hardcoded constraint types (time, day, person). Adding new constraint types required backend changes.
 Solution: Refactored to a plugin-based constraint architecture. Each constraint type implements a standard interface (validate(), score(), apply()). New constraints are registered at runtime. This reduced adding a new constraint type from ~50 lines of scattered changes to a single 15-line class.
 
-**How to Run**
+## **How to Run**
 
 **Prerequisites**
 
-Node.js 18+
+- Node.js 18+
 
-Java 17+
+- Java 17+
 
-MongoDB 6+
+- MongoDB 6+
 
 **Backend (Spring Boot)**
-
+```bash
 cd shifter-backend
 ./mvnw spring-boot:run
+```
 
 **API Layer (Node.js)**
 
+```bash
 cd shifter-api
 npm install
 npm run dev
+```
 
 **Frontend (React)**
 
+```bash
 cd shifter-frontend
 npm install
 npm run dev
+```
 
 The application will be available at http://localhost:5173.
 
-**What I Learned**
+## **What I Learned**
 
-**- Distributed system complexity:** Splitting a single app into two backend services introduced network failure modes I hadn't considered. I learned to design for partial failures—graceful degradation when the Spring Boot service is unavailable.
+- **Distributed system complexity:** Splitting a single app into two backend services introduced network failure modes I hadn't considered. I learned to design for partial failures—graceful degradation when the Spring Boot service is unavailable.
 
-**- Frontend performance: ** React's default rendering is fast until it isn't. I profiled with React DevTools and learned to memoize expensive components, cutting re-render time by 60%.
+- **Frontend performance:** React's default rendering is fast until it isn't. I profiled with React DevTools and learned to memoize expensive components, cutting re-render time by 60%.
 
-**- Real-world constraint modeling:** Academic scheduling problems assume perfect information. In practice, managers submit conflicting constraints constantly. Building a system that handles ambiguity gracefully is harder than building one that assumes consistency.
+- **Real-world constraint modeling:** Academic scheduling problems assume perfect information. In practice, managers submit conflicting constraints constantly. Building a system that handles ambiguity gracefully is harder than building one that assumes consistency.
 
-**Links**
+## **Links**
 
 - [GitHub Repository](https://github.com/alfonsojose-go/Shifter)
 
